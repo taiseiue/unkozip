@@ -22,7 +22,7 @@ namespace unkozip
                 });
 
                 string source = options.Value.Source;
-                string output = string.IsNullOrEmpty(options.Value.Output) ? Path.Combine(Directory.GetCurrentDirectory(), Path.GetFileNameWithoutExtension(source)) : options.Value.Output;
+                string output = string.IsNullOrEmpty(options.Value.Output) ? Directory.GetCurrentDirectory() : options.Value.Output;
                 Encoding encoding = string.IsNullOrEmpty(options.Value.CodeName)
                     ? Encoding.GetEncoding(options.Value.CodePoint)
                     : Encoding.GetEncoding(options.Value.CodeName);
